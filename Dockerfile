@@ -4,6 +4,7 @@ WORKDIR /app
 COPY package-lock.json .
 
 COPY . .
+RUN npm install
 RUN npm run-script build
 
 # => Run container
