@@ -1,13 +1,14 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { BrowserRouter, Route, Link } from 'react-router-dom';
-import logo from './logo.svg';
 import Welcome from './Welcome';
 import Secured from './Secured';
 import './App.css';
 
-function App() {
-  return (
-    <BrowserRouter>
+class App extends Component {
+
+  render() {
+    return (
+      <BrowserRouter>
         <div className="container">
           <ul>
             <li><Link to="/">public component</Link></li>
@@ -17,7 +18,7 @@ function App() {
           <Route path="/secured" component={Secured} />
         </div>
       </BrowserRouter>
-  );
+    );
+  }
 }
-
 export default App;
