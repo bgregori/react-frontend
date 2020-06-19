@@ -10,7 +10,7 @@ class UserInfo extends Component {
       id: ""
     };
     this.props.keycloak.loadUserInfo().then(userInfo => {
-        this.setState({name: userInfo.name, email: userInfo.email, id: userInfo.sub})
+        this.setState({name: userInfo.given_name, email: userInfo.email, id: userInfo.sub})
     });
   }
 
