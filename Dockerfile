@@ -11,8 +11,10 @@ RUN npm run-script build
 FROM centos/nginx-114-centos7
 
 # Nginx config
-# RUN rm -rf /etc/nginx/conf.d
-# COPY conf/conf.d ./nginx-cfg
+USER root
+RUN rm -f /etc/nginx/nginx.conf
+COPY conf/conf.d/default.conf /etc/nginx/nginx.conf
+USER 1001
 
 # Static build
 COPY --from=builder /app/build ./
