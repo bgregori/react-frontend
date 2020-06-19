@@ -21,9 +21,10 @@ class Secured extends Component {
         <div>
           <p>This is a Keycloak-secured component of your application. You shouldn't be able
           to see this unless you've authenticated with Keycloak.</p>
+          <UserInfo keycloak={this.state.keycloak} />
+          <Logout keycloak={this.state.keycloak} />
         </div>
-        <UserInfo keycloak={this.state.keycloak} />
-        <Logout keycloak={this.state.keycloak} />
+        
       ); else return (<div>Unable to authenticate!</div>)
     }
     return (
