@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import Keycloak from 'keycloak-js';
+import UserInfo from './UserInfo';
+import Logout from './Logout';
 
 class Secured extends Component {
 
